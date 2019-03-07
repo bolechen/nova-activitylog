@@ -1,17 +1,27 @@
 <?php
 
+/*
+ * This file is part of the bolechen/nova-activitylog
+ *
+ * (c) Bole Chen <avenger@php.net>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Bolechen\NovaActivitylog\Http\Middleware;
 
-use Laravel\Nova\Nova;
 use Bolechen\NovaActivitylog\NovaActivitylog;
+use Laravel\Nova\Nova;
 
 class Authorize
 {
     /**
      * Handle the incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure                 $next
+     *
      * @return \Illuminate\Http\Response
      */
     public function handle($request, $next)
@@ -25,6 +35,7 @@ class Authorize
      * Determine whether this tool belongs to the package.
      *
      * @param \Laravel\Nova\Tool $tool
+     *
      * @return bool
      */
     public function matchesTool($tool)

@@ -1,21 +1,28 @@
 <?php
 
+/*
+ * This file is part of the bolechen/nova-activitylog
+ *
+ * (c) Bole Chen <avenger@php.net>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Bolechen\NovaActivitylog;
 
+use Bolechen\NovaActivitylog\Http\Middleware\Authorize;
 use Bolechen\NovaActivitylog\Resources\Activitylog;
-use Spatie\Activitylog\Models\Activity;
-use Laravel\Nova\Nova;
-use Laravel\Nova\Events\ServingNova;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Bolechen\NovaActivitylog\Http\Middleware\Authorize;
+use Laravel\Nova\Events\ServingNova;
+use Laravel\Nova\Nova;
+use Spatie\Activitylog\Models\Activity;
 
 class ToolServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
     public function boot()
     {
@@ -29,7 +36,7 @@ class ToolServiceProvider extends ServiceProvider
 
         $this->app->booted(function () {
             Nova::resources([
-                Activitylog::class
+                Activitylog::class,
             ]);
             $this->routes();
         });
@@ -41,8 +48,6 @@ class ToolServiceProvider extends ServiceProvider
 
     /**
      * Register the tool's routes.
-     *
-     * @return void
      */
     protected function routes()
     {
@@ -57,11 +62,8 @@ class ToolServiceProvider extends ServiceProvider
 
     /**
      * Register any application services.
-     *
-     * @return void
      */
     public function register()
     {
-        //
     }
 }
