@@ -2,7 +2,9 @@
 
 A tool to activity logger to monitor the users of your Laravel Nova.
 
-Base on [spatie/laravel-activitylog](https://github.com/spatie/laravel-activitylog).
+Behind the scenes [spatie/laravel-activitylog](https://github.com/spatie/laravel-activitylog) is used.
+
+![screenshot](https://raw.githubusercontent.com/bolechen/nova-activitylog/master/docs/screenshot.png)
 
 ## Installation
 
@@ -30,4 +32,4 @@ public function tools()
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
