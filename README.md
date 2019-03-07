@@ -6,7 +6,7 @@ A tool to activity logger to monitor the users of your Laravel Nova.
 
 
 
-![screenshot](https://raw.githubusercontent.com/bolechen/nova-activitylog/master/docs/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/bolechen/nova-activitylog/master/docs/screenshot.png?20190308)
 
 ## Installation
 
