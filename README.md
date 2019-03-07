@@ -1,5 +1,8 @@
 # Nova tool for activity log
 
+[![Latest Stable Version](https://poser.pugx.org/bolechen/nova-activitylog/v/stable)](https://packagist.org/packages/bolechen/nova-activitylog)
+[![License](https://poser.pugx.org/bolechen/nova-activitylog/license)](https://packagist.org/packages/bolechen/nova-activitylog)
+
 A tool to activity logger to monitor the users of your Laravel Nova.
 
 - Behind the scenes [spatie/laravel-activitylog](https://github.com/spatie/laravel-activitylog) is used.
