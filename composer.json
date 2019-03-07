@@ -1,7 +1,6 @@
 {
     "name": "bolechen/nova-activitylog",
     "description": "A tool to activity logger to monitor the users of your Laravel Nova.",
-    "version": "0.1",
     "keywords": [
         "laravel",
         "nova",
