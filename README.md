@@ -1,5 +1,6 @@
 # Nova tool for activity log
 
+[![StyleCI](https://github.styleci.io/repos/174304298/shield?branch=master)](https://github.styleci.io/repos/174304298)
 [![Latest Stable Version](https://poser.pugx.org/bolechen/nova-activitylog/v/stable)](https://packagist.org/packages/bolechen/nova-activitylog)
 [![License](https://poser.pugx.org/bolechen/nova-activitylog/license)](https://packagist.org/packages/bolechen/nova-activitylog)
 
