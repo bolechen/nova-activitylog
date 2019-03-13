@@ -14,6 +14,8 @@ You can install the package in to a Laravel app that uses [Nova](https://nova.la
 composer require bolechen/nova-activitylog
 ```
 
+## How to use
+
 Next up, you must register the tool with Nova. This is typically done in the `tools` method of the `NovaServiceProvider`.
 
 ```php
@@ -29,6 +31,26 @@ public function tools()
     ];
 }
 ```
+
+Because backend we use the `spatie/laravel-activitylog` package, you need to do is let your model use the `Spatie\Activitylog\Traits\LogsActivity` trait.
+
+Here's an example:
+
+```php
+use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
+
+class NewsItem extends Model
+{
+    use LogsActivity;
+
+    protected $fillable = ['name', 'text'];
+    
+    protected static $logAttributes = ['name', 'text'];
+}
+```
+
+For more advanced usage can look at the doc: https://docs.spatie.be/laravel-activitylog/v3/advanced-usage/logging-model-events
 
 ## License
 
