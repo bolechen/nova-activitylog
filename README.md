@@ -9,8 +9,8 @@ A tool to activity logger to monitor the users of your Laravel Nova.
 - Behind the scenes [spatie/laravel-activitylog](https://github.com/spatie/laravel-activitylog) is used.
 
 
-
 ![screenshot](https://raw.githubusercontent.com/bolechen/nova-activitylog/master/docs/screenshot.png?20190308)
+
 
 ## Installation
 
@@ -28,14 +28,11 @@ php artisan vendor:publish --provider="Spatie\Activitylog\ActivitylogServiceProv
 *Note*: The default migration assumes you are using integers for your model IDs. If you are using UUIDs, or some other format, adjust the format of the subject_id and causer_id fields in the published migration before continuing.
 
 
-
 After publishing the migration you can create the `activity_log` table by running the migrations:
 
 ```bash
 php artisan migrate
 ```
-
-
 
 You can optionally publish the config file with:
 
@@ -43,11 +40,7 @@ You can optionally publish the config file with:
 php artisan vendor:publish --provider="Spatie\Activitylog\ActivitylogServiceProvider" --tag="config"
 ```
 
-
-
-**You can find More `Activitylog` documentation on https://docs.spatie.be/laravel-activitylog/v3.**
-
-
+## How to use
 
 Next up, you must register the tool with Nova. This is typically done in the `tools` method of the `NovaServiceProvider`.
 
@@ -65,7 +58,25 @@ public function tools()
 }
 ```
 
+Because backend we use the `spatie/laravel-activitylog` package, you need to do is let your model use the `Spatie\Activitylog\Traits\LogsActivity` trait.
 
+Here's an example:
+
+```php
+use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
+
+class NewsItem extends Model
+{
+    use LogsActivity;
+
+    protected $fillable = ['name', 'text'];
+    
+    protected static $logAttributes = ['name', 'text'];
+}
+```
+
+For more advanced usage can look at the doc: https://docs.spatie.be/laravel-activitylog/v3/advanced-usage/logging-model-events
 
 ## License
 
