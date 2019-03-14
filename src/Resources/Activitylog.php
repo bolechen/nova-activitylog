@@ -66,7 +66,7 @@ class Activitylog extends Resource
     {
         self::$model = \Spatie\Activitylog\ActivitylogServiceProvider::determineActivityModel();
 
-        return new self::$model;
+        return new self::$model();
     }
 
     /**
