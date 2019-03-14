@@ -20,12 +20,7 @@ use Laravel\Nova\Fields\Text;
 
 class Activitylog extends Resource
 {
-    /**
-     * The model the resource corresponds to.
-     *
-     * @var string
-     */
-    public static $model = 'Spatie\\Activitylog\\Models\\Activity';
+    public static $model;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -52,14 +47,26 @@ class Activitylog extends Resource
      */
     public static $displayInNavigation = false;
 
+    /**
+     * Label for display.
+     *
+     * @return string
+     */
     public static function label()
     {
         return __('Activity Logs');
     }
 
-    public function create()
+    /**
+     * Get a fresh instance of the model represented by the resource.
+     *
+     * @return mixed
+     */
+    public static function newModel()
     {
-        return false;
+        self::$model = \Spatie\Activitylog\ActivitylogServiceProvider::determineActivityModel();
+
+        return new self::$model;
     }
 
     /**
