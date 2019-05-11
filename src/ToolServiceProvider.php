@@ -11,9 +11,7 @@
 
 namespace Bolechen\NovaActivitylog;
 
-use Bolechen\NovaActivitylog\Http\Middleware\Authorize;
 use Bolechen\NovaActivitylog\Resources\Activitylog;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
