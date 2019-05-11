@@ -2,7 +2,7 @@
 
 A tool to activity logger to monitor the users of your Laravel Nova.
 
-Behind the scenes [spatie/laravel-activitylog](https://github.com/spatie/laravel-activitylog) is used.
+Behind the scenes [spatie/laravel-activitylog](https://packagist.org/packages/spatie/laravel-activitylog) is used.
 
 ![screenshot](https://raw.githubusercontent.com/bolechen/nova-activitylog/master/docs/screenshot.png)
 
