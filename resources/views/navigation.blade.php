@@ -2,7 +2,7 @@
     :to="{
         name: 'index',
         params: {
-            resourceName: 'activitylogs'
+            resourceName: '{{ config('nova-activitylog.resourceName', 'activitylogs') }}'
         }
     }"
     tag="h3"

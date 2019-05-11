@@ -11,7 +11,6 @@
 
 namespace Bolechen\NovaActivitylog;
 
-use Laravel\Nova\Nova;
 use Laravel\Nova\Tool;
 
 class NovaActivitylog extends Tool
@@ -21,8 +20,7 @@ class NovaActivitylog extends Tool
      */
     public function boot()
     {
-        Nova::script('nova-activitylog', __DIR__.'/../dist/js/tool.js');
-        Nova::style('nova-activitylog', __DIR__.'/../dist/css/tool.css');
+        //
     }
 
     /**

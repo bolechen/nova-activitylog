@@ -8,7 +8,6 @@ A tool to activity logger to monitor the users of your Laravel Nova.
 
 - Behind the scenes [spatie/laravel-activitylog](https://github.com/spatie/laravel-activitylog) is used.
 
-
 ![screenshot](https://raw.githubusercontent.com/bolechen/nova-activitylog/master/docs/screenshot.png?20190308)
 
 
@@ -77,6 +76,34 @@ class NewsItem extends Model
 ```
 
 For more advanced usage can look at the doc: https://docs.spatie.be/laravel-activitylog/v3/advanced-usage/logging-model-events
+
+
+## Customize
+
+If you want to customize the tools. Eg: add filters or cards, you can create your owner resource file extends the original like this:
+
+```php
+use Bolechen\NovaActivitylog\Resources\Activitylog;
+
+class Activity extends Activitylog
+{
+    public function filters(Request $request)
+    {
+        return [
+            // Your customize filters, etc...
+            new Filters\LogsType(),
+        ];
+    }
+}
+```
+
+Next up, publish the config file with:
+
+```bash
+php artisan vendor:publish --provider="Bolechen\\NovaActivitylog\\ToolServiceProvider" --tag="config"
+```
+
+And change the resourceName in `config/nova-activitylog.log` to your customize resource name.
 
 ## License
 

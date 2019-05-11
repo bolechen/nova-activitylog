@@ -28,8 +28,8 @@ class ToolServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'nova-activitylog');
 
-        //记录操作者 IP
-        //@see https://github.com/spatie/laravel-activitylog/issues/39
+        // 记录操作者 IP
+        // @see https://github.com/spatie/laravel-activitylog/issues/39
         Activity::saving(function (Activity $activity) {
             $activity->properties = $activity->properties->put('ip', request()->ip());
         });
@@ -44,6 +44,10 @@ class ToolServiceProvider extends ServiceProvider
         Nova::serving(function (ServingNova $event) {
             activity()->enableLogging();
         });
+
+        $this->publishes([
+            __DIR__.'/../config/nova-activitylog.php' => config_path('nova-activitylog.php'),
+        ], 'config');
     }
 
     /**
@@ -51,13 +55,6 @@ class ToolServiceProvider extends ServiceProvider
      */
     protected function routes()
     {
-        if ($this->app->routesAreCached()) {
-            return;
-        }
-
-        Route::middleware(['nova', Authorize::class])
-                ->prefix('nova-vendor/nova-activitylog')
-                ->group(__DIR__.'/../routes/api.php');
     }
 
     /**
