@@ -55,13 +55,6 @@ class ToolServiceProvider extends ServiceProvider
      */
     protected function routes()
     {
-        if ($this->app->routesAreCached()) {
-            return;
-        }
-
-        Route::middleware(['nova', Authorize::class])
-                ->prefix('nova-vendor/nova-activitylog')
-                ->group(__DIR__.'/../routes/api.php');
     }
 
     /**
