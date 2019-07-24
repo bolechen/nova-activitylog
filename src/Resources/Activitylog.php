@@ -11,14 +11,14 @@
 
 namespace Bolechen\NovaActivitylog\Resources;
 
-use App\Nova\Resource;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Code;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Resource as NovaResource;
 
-class Activitylog extends Resource
+class Activitylog extends NovaResource
 {
     public static $model;
 

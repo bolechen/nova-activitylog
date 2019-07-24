@@ -20,7 +20,6 @@ class NovaActivitylog extends Tool
      */
     public function boot()
     {
-        //
     }
 
     /**
