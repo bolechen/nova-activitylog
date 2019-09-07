@@ -11,7 +11,7 @@
 
 return [
     /*
-     * Set the resource used for `nova-activitylog` package. Default is `activitylogs`.
+     * Set the resource used for `nova-activitylog` package.
      */
-    'resourceName' => 'activitylogs',
+    'resource' => \Bolechen\NovaActivitylog\Resources\Activitylog::class,
 ];

@@ -11,7 +11,6 @@
 
 namespace Bolechen\NovaActivitylog;
 
-use Bolechen\NovaActivitylog\Resources\Activitylog;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
@@ -24,17 +23,23 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->publishes([
+            __DIR__.'/../config/nova-activitylog.php' => config_path('nova-activitylog.php'),
+        ], 'config');
+
+        $this->mergeConfigFrom(__DIR__.'/../config/nova-activitylog.php', 'nova-activitylog');
+
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'nova-activitylog');
 
         // 记录操作者 IP
         // @see https://github.com/spatie/laravel-activitylog/issues/39
-        Activity::saving(function (Activity $activity) {
+        config('activitylog.activity_model')::saving(function (Activity $activity) {
             $activity->properties = $activity->properties->put('ip', request()->ip());
         });
 
         $this->app->booted(function () {
             Nova::resources([
-                Activitylog::class,
+                config('nova-activitylog.resource'),
             ]);
             $this->routes();
         });
@@ -43,9 +48,6 @@ class ToolServiceProvider extends ServiceProvider
             activity()->enableLogging();
         });
 
-        $this->publishes([
-            __DIR__.'/../config/nova-activitylog.php' => config_path('nova-activitylog.php'),
-        ], 'config');
     }
 
     /**
