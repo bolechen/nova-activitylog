@@ -103,7 +103,7 @@ Next up, publish the config file with:
 php artisan vendor:publish --provider="Bolechen\\NovaActivitylog\\ToolServiceProvider" --tag="config"
 ```
 
-And change the resourceName in `config/nova-activitylog.log` to your customize resource name.
+And change the `resource` in `config/nova-activitylog.php` to your custom nova resource.
 
 ## License
 
