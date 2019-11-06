@@ -31,13 +31,13 @@ class ToolServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'nova-activitylog');
 
-        // 记录操作者 IP
-        // @see https://github.com/spatie/laravel-activitylog/issues/39
-        config('activitylog.activity_model')::saving(function (Activity $activity) {
-            $activity->properties = $activity->properties->put('ip', request()->ip());
-        });
-
         $this->app->booted(function () {
+            // 记录操作者 IP
+            // @see https://github.com/spatie/laravel-activitylog/issues/39
+            config('activitylog.activity_model')::saving(function (Activity $activity) {
+                $activity->properties = $activity->properties->put('ip', request()->ip());
+            });
+
             Nova::resources([
                 config('nova-activitylog.resource'),
             ]);
