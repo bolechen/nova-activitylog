@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Code;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\MorphTo;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Resource as NovaResource;
 
@@ -84,11 +85,11 @@ class Activitylog extends NovaResource
             Text::make('Description'),
             Text::make('Subject Id'),
             Text::make('Subject Type'),
-            Text::make('Causer Id'),
+            MorphTo::make('Causer'),
             Text::make('Causer Ip', 'properties->ip')->onlyOnIndex(),
 
-            Code::make('properties')->json(JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE),
-            DateTime::make('created_at'),
+            Code::make('Properties')->json(JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE),
+            DateTime::make('Created At'),
         ];
     }
 
