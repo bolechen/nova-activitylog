@@ -1,8 +1,9 @@
 # Nova tool for activity log
 
 [![StyleCI](https://github.styleci.io/repos/174304298/shield?branch=master)](https://github.styleci.io/repos/174304298)
-[![Latest Stable Version](https://poser.pugx.org/bolechen/nova-activitylog/v/stable)](https://packagist.org/packages/bolechen/nova-activitylog)
-[![License](https://poser.pugx.org/bolechen/nova-activitylog/license)](https://packagist.org/packages/bolechen/nova-activitylog)
+![Packagist Downloads](https://img.shields.io/packagist/dt/bolechen/nova-activitylog)
+![Packagist Version](https://img.shields.io/packagist/v/bolechen/nova-activitylog)
+![GitHub](https://img.shields.io/github/license/bolechen/nova-activitylog)
 
 A tool to activity logger to monitor the users of your Laravel Nova.
 
