@@ -57,7 +57,7 @@ class Activitylog extends NovaResource
     {
         return __('Activity Logs');
     }
-    
+
     /**
      * Get the displayable singular label of the resource.
      *
