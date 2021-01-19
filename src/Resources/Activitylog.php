@@ -57,6 +57,16 @@ class Activitylog extends NovaResource
     {
         return __('Activity Logs');
     }
+    
+    /**
+     * Get the displayable singular label of the resource.
+     *
+     * @return string
+     */
+    public static function singularLabel()
+    {
+        return __('Activity Log');
+    }
 
     /**
      * Get a fresh instance of the model represented by the resource.
@@ -82,14 +92,14 @@ class Activitylog extends NovaResource
         return [
             ID::make()->sortable(),
 
-            Text::make('Description'),
-            Text::make('Subject Id'),
-            Text::make('Subject Type'),
-            MorphTo::make('Causer'),
-            Text::make('Causer Ip', 'properties->ip')->onlyOnIndex(),
+            Text::make(__('Description'), 'description'),
+            Text::make(__('Subject Id'), 'subject_id'),
+            Text::make(__('Subject Type'), 'subject_type'),
+            MorphTo::make(__('Causer'), 'causer'),
+            Text::make(__('Causer Ip'), 'properties->ip')->onlyOnIndex(),
 
-            Code::make('Properties')->json(JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE),
-            DateTime::make('Created At'),
+            Code::make(__('Properties'), 'properties')->json(JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE),
+            DateTime::make(__('Created At'), 'created_at'),
         ];
     }
 
