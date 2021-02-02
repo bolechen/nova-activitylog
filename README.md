@@ -40,6 +40,12 @@ You can optionally publish the config file with:
 php artisan vendor:publish --provider="Spatie\Activitylog\ActivitylogServiceProvider" --tag="config"
 ```
 
+You may only want to log actions from nova, put this line to your `.env` files let default logger off.
+
+```env
+ACTIVITY_LOGGER_ENABLED=false
+```
+
 ## How to use
 
 Next up, you must register the tool with Nova. This is typically done in the `tools` method of the `NovaServiceProvider`.
