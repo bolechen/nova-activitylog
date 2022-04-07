@@ -11,8 +11,8 @@
 
 namespace Bolechen\NovaActivitylog;
 
-use Laravel\Nova\Tool;
 use Illuminate\Http\Request;
+use Laravel\Nova\Tool;
 
 class NovaActivitylog extends Tool
 {
