@@ -13,7 +13,6 @@ namespace Bolechen\NovaActivitylog;
 
 use Laravel\Nova\Tool;
 use Illuminate\Http\Request;
-use Laravel\Nova\Menu\MenuSection;
 
 class NovaActivitylog extends Tool
 {
