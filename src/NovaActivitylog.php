@@ -27,6 +27,7 @@ class NovaActivitylog extends Tool
      * Build the menu that renders the navigation links for the tool.
      *
      * @param  \Illuminate\Http\Request $request
+     *
      * @return mixed
      */
     public function menu(Request $request)
