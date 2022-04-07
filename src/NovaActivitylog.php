@@ -32,6 +32,5 @@ class NovaActivitylog extends Tool
      */
     public function menu(Request $request)
     {
-
     }
 }
