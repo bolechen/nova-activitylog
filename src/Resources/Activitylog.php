@@ -11,12 +11,12 @@
 
 namespace Bolechen\NovaActivitylog\Resources;
 
-use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Code;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\MorphTo;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Resource as NovaResource;
 
 class Activitylog extends NovaResource
@@ -46,7 +46,12 @@ class Activitylog extends NovaResource
      *
      * @var bool
      */
-    public static $displayInNavigation = false;
+    public static $displayInNavigation = true;
+
+    public static function group()
+    {
+        return __('Activity Logs');
+    }
 
     /**
      * Label for display.
@@ -83,11 +88,11 @@ class Activitylog extends NovaResource
     /**
      * Get the fields displayed by the resource.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param \Laravel\Nova\Http\Requests\NovaRequest $request
      *
      * @return array
      */
-    public function fields(Request $request)
+    public function fields(NovaRequest $request)
     {
         return [
             ID::make()->sortable(),
@@ -106,11 +111,11 @@ class Activitylog extends NovaResource
     /**
      * Get the cards available for the request.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param \Laravel\Nova\Http\Requests\NovaRequest $request
      *
      * @return array
      */
-    public function cards(Request $request)
+    public function cards(NovaRequest $request)
     {
         return [];
     }
@@ -118,11 +123,11 @@ class Activitylog extends NovaResource
     /**
      * Get the filters available for the resource.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param \Laravel\Nova\Http\Requests\NovaRequest $request
      *
      * @return array
      */
-    public function filters(Request $request)
+    public function filters(NovaRequest $request)
     {
         return [];
     }
@@ -130,11 +135,11 @@ class Activitylog extends NovaResource
     /**
      * Get the lenses available for the resource.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param \Laravel\Nova\Http\Requests\NovaRequest $request
      *
      * @return array
      */
-    public function lenses(Request $request)
+    public function lenses(NovaRequest $request)
     {
         return [];
     }
@@ -142,11 +147,11 @@ class Activitylog extends NovaResource
     /**
      * Get the actions available for the resource.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param \Laravel\Nova\Http\Requests\NovaRequest $request
      *
      * @return array
      */
-    public function actions(Request $request)
+    public function actions(NovaRequest $request)
     {
         return [];
     }
