@@ -4,6 +4,7 @@
 [![Packagist Downloads](https://img.shields.io/packagist/dt/bolechen/nova-activitylog)](https://packagist.org/packages/bolechen/nova-activitylog)
 [![Packagist Version](https://img.shields.io/packagist/v/bolechen/nova-activitylog)](https://packagist.org/packages/bolechen/nova-activitylog)
 ![GitHub](https://img.shields.io/github/license/bolechen/nova-activitylog)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fbolechen%2Fnova-activitylog.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fbolechen%2Fnova-activitylog?ref=badge_shield)
 
 A tool to activity logger to monitor the users of your Laravel Nova.
 
@@ -115,3 +116,6 @@ And change the `resource` in `config/nova-activitylog.php` to your custom nova r
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fbolechen%2Fnova-activitylog.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fbolechen%2Fnova-activitylog?ref=badge_large)
