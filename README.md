@@ -85,6 +85,10 @@ class NewsItem extends Model
 
 For more advanced usage can look at the doc: https://docs.spatie.be/laravel-activitylog/v3/advanced-usage/logging-model-events
 
+## Authorizing
+
+Typical usage of tool authorizing using `->canSee()` or `->canSeeWhen()` when registering the tool will NOT work. To authorize the tool, simply [make and register a Laravel policy](https://laravel.com/docs/10.x/authorization#creating-policies) for the `ActivityLog` model. If a user is not able to view them according to the policy, the tool will not show.
+
 
 ## Customize
 
