@@ -35,7 +35,6 @@ class NovaActivitylog extends Tool
     public function menu(Request $request)
     {
         return MenuSection::resource(Activitylog::class)
-            ->path('resources/activities')
             ->icon('document-duplicate');
     }
 }
