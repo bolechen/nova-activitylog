@@ -22,8 +22,9 @@ composer require bolechen/nova-activitylog
 ```
 
 You can publish the migration with:
+
 ```bash
-php artisan vendor:publish --provider="Spatie\Activitylog\ActivitylogServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="Spatie\Activitylog\ActivitylogServiceProvider" --tag="activitylog-migrations"
 ```
 
 *Note*: The default migration assumes you are using integers for your model IDs. If you are using UUIDs, or some other format, adjust the format of the subject_id and causer_id fields in the published migration before continuing.
@@ -65,7 +66,7 @@ public function tools()
 }
 ```
 
-Because backend we use the `spatie/laravel-activitylog` package, you need to do is let your model use the `Spatie\Activitylog\Traits\LogsActivity` trait.
+Because the backend uses the `spatie/laravel-activitylog` package, you need to let your model use the `Spatie\Activitylog\Traits\LogsActivity` trait.
 
 Here's an example:
 
