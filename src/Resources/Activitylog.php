@@ -46,7 +46,7 @@ class Activitylog extends NovaResource
      *
      * @var bool
      */
-    public static $displayInNavigation = true;
+    public static $displayInNavigation = false;
 
     public static function group()
     {
