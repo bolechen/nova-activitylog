@@ -11,7 +11,6 @@
 
 namespace Bolechen\NovaActivitylog;
 
-use Bolechen\NovaActivitylog\Resources\Activitylog;
 use Illuminate\Http\Request;
 use Laravel\Nova\Menu\MenuSection;
 use Laravel\Nova\Tool;
@@ -34,7 +33,7 @@ class NovaActivitylog extends Tool
      */
     public function menu(Request $request)
     {
-        return MenuSection::resource(Activitylog::class)
+        return MenuSection::resource(config('nova-activitylog.resource'))
             ->icon('document-duplicate');
     }
 }
