@@ -21,7 +21,7 @@ class ToolServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot()
+    public function boot(): void
     {
         $this->publishes([
             __DIR__.'/../config/nova-activitylog.php' => config_path('nova-activitylog.php'),
@@ -37,29 +37,14 @@ class ToolServiceProvider extends ServiceProvider
             config('activitylog.activity_model')::saving(function (Activity $activity) {
                 $activity->properties = $activity->properties->put('ip', request()->ip());
             });
-
-            Nova::resources([
-                config('nova-activitylog.resource'),
-            ]);
-            $this->routes();
         });
 
         Nova::serving(function (ServingNova $event) {
             activity()->enableLogging();
+
+            Nova::resources([
+                config('nova-activitylog.resource'),
+            ]);
         });
-    }
-
-    /**
-     * Register the tool's routes.
-     */
-    protected function routes()
-    {
-    }
-
-    /**
-     * Register any application services.
-     */
-    public function register()
-    {
     }
 }

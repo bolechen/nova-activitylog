@@ -1,32 +1,38 @@
 {
-    "name": "bolechen/nova-activitylog",
-    "description": "A tool to activity logger to monitor the users of your Laravel Nova.",
-    "keywords": [
-        "laravel",
-        "nova",
-        "activity",
-        "log"
-    ],
-    "license": "MIT",
-    "require": {
-        "laravel/nova": "^4.0",
-        "spatie/laravel-activitylog": "^3.9|^4.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Bolechen\\NovaActivitylog\\": "src/"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Bolechen\\NovaActivitylog\\ToolServiceProvider"
-            ]
-        }
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+  "name": "bolechen/nova-activitylog",
+  "description": "A tool to activity logger to monitor the users of your Laravel Nova.",
+  "keywords": [
+    "laravel",
+    "nova",
+    "activity",
+    "log"
+  ],
+  "license": "MIT",
+  "require": {
+    "laravel/nova": "^4.0",
+    "spatie/laravel-activitylog": "^3.9|^4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Bolechen\\NovaActivitylog\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Bolechen\\NovaActivitylog\\ToolServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://nova.laravel.com"
+    }
+  ]
 }
