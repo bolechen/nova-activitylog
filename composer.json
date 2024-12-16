@@ -9,7 +9,7 @@
     ],
     "license": "MIT",
     "require": {
-        "laravel/nova": "^4.0",
+        "laravel/nova": "^4.0|^5.0",
         "spatie/laravel-activitylog": "^3.9|^4.0"
     },
     "autoload": {
