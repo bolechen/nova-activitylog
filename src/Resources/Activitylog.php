@@ -18,6 +18,7 @@ use Laravel\Nova\Fields\MorphTo;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Resource as NovaResource;
+use Illuminate\Http\Request;
 
 class Activitylog extends NovaResource
 {
@@ -92,7 +93,7 @@ class Activitylog extends NovaResource
      *
      * @return array
      */
-    public function fields(NovaRequest $request)
+    public function fields(Request $request)
     {
         return [
             ID::make()->sortable(),
@@ -115,7 +116,7 @@ class Activitylog extends NovaResource
      *
      * @return array
      */
-    public function cards(NovaRequest $request)
+    public function cards(Request $request)
     {
         return [];
     }
@@ -127,7 +128,7 @@ class Activitylog extends NovaResource
      *
      * @return array
      */
-    public function filters(NovaRequest $request)
+    public function filters(Request $request)
     {
         return [];
     }
@@ -139,7 +140,7 @@ class Activitylog extends NovaResource
      *
      * @return array
      */
-    public function lenses(NovaRequest $request)
+    public function lenses(Request $request)
     {
         return [];
     }
@@ -151,7 +152,7 @@ class Activitylog extends NovaResource
      *
      * @return array
      */
-    public function actions(NovaRequest $request)
+    public function actions(Request $request)
     {
         return [];
     }
