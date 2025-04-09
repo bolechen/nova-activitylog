@@ -35,7 +35,11 @@ class ToolServiceProvider extends ServiceProvider
             // 记录操作者 IP
             // @see https://github.com/spatie/laravel-activitylog/issues/39
             config('activitylog.activity_model')::saving(function (Activity $activity) {
-                $activity->properties = $activity->properties->put('ip', request()->ip());
+                $ip = request()->ip();
+
+                if ($ip !== '127.0.0.1') {
+                    $activity->properties = $activity->properties->put('ip', $ip);
+                }
             });
         });
 
